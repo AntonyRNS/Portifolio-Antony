@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questão 4</title>
+</head>
+
+<body>
+    <div id="operacao">
+        <input type="text" id="frase" placeholder="Digite uma frase.">
+        <button onclick="contarVogais()">Gerar Pares</button>
+    </div>
+
+
+
+    <script>
+        function contarVogais(){
+            let vogais = 0
+            const frase = document.getElementById('frase')
+            for (index = 0; index < frase.lenght; index++){
+                if (frase[index] == 'a' || frase[index] == 'e' || frase[index] == 'i' || frase[index] == 'o' || frase[index] == 'u'){
+                    vogais++
+                    console.log(vogais)
+                } 
+            }
+            const p = document.createElement('p')
+            p.innerText = vogais
+            document.getElementById('operacao').appendChild(p)
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratório 1</title>
+</head>
+<style>
+    
+</style>
+<body>
+    <label>Digite um valor: 
+        <input type="text" id="valor">
+    </label>
+    <div id="botaos">
+        Selecione uma operação para realizar sobre este array.
+        <button onclick="operacao('Push')">Push</button>
+        <button onclick="operacao('Unshift')">Unshift</button>
+        <button onclick="operacao('Shift')">Shift</button>
+        <button onclick="operacao('Pop')">Pop</button>
+
+    </div>
+        <div id="resposta">
+            
+        </div>
+    <script>
+
+        function push(meuArray, valor){
+            const tamanho = meuArray.lenght
+            meuArray[tamanho] = valor
+        }
+        function unshift(meuArray, valor){
+            
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        function renderDiv(nomeDiv, conteudo){
+            const divArray = document.querySelector(nomeDiv)
+            divArray.innerHTML = ''
+            const paragrafo = document.createElement('p')
+            paragrafo.innerText = conteudo.join()
+            divArray.appendChild(paragrafo)
+
+        }
+        let array = []
+        function operacao(opcao){
+
+            
+            const elemento = document.querySelector('#valor')
+            const elementoProArray = elemento.value
+            elemento.value = ''
+            switch (opcao){
+                case 'Push':
+                    array.push(elementoProArray)
+                    break
+                case 'Unshift':
+                    array.unshift(elementoProArray)
+                    break
+                case 'Shift':
+                    array.shift()
+                    break
+                case 'Pop':
+                    console.log('pop')
+                    array.pop()
+                    break
+                default:
+                    break
+            }
+            renderDiv('#resposta', array)
+        }
+    </script>
+</body>
+</html>
